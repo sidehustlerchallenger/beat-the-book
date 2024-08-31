@@ -10,12 +10,12 @@ public class BeatTheBook {
 
     public static class BeatTheBookInput {
         public Pair input;
-        public Pair ProfitBoostPair;
+        public float profitBoost;
         public int numberOfIterations;
 
-        public BeatTheBookInput(Pair input, Pair profitBoostPair, int numberOfIterations) {
+        public BeatTheBookInput(Pair input, float profitBoost, int numberOfIterations) {
             this.input = input;
-            ProfitBoostPair = profitBoostPair;
+            this.profitBoost = profitBoost;
             this.numberOfIterations = numberOfIterations;
         }
 
@@ -23,7 +23,7 @@ public class BeatTheBook {
         public String toString() {
             return "BeatTheBookInput{" +
                     "input=" + input +
-                    ", ProfitBoostPair=" + ProfitBoostPair +
+                    ", ProfitBoost=" + profitBoost +
                     ", numberOfIterations=" + numberOfIterations +
                     '}';
         }
@@ -73,10 +73,10 @@ public class BeatTheBook {
         for (int i = 0; i < beatTheBookInput.numberOfIterations; i++) {
             if (Math.random() <= assumedProbabilityPair.numberOne) {
                 totalWinnings.numberOne += perWin.numberOne;
-                totalWinningsWithProfitBoost.numberOne += perWin.numberOne + convertToBoostWinning(perWin.numberOne);
+                totalWinningsWithProfitBoost.numberOne += perWin.numberOne + convertToBoostWinning(perWin.numberOne, beatTheBookInput.profitBoost);
             } else {
                 totalWinnings.numberTwo += perWin.numberTwo;
-                totalWinningsWithProfitBoost.numberTwo += perWin.numberTwo + convertToBoostWinning(perWin.numberTwo);
+                totalWinningsWithProfitBoost.numberTwo += perWin.numberTwo + convertToBoostWinning(perWin.numberTwo, beatTheBookInput.profitBoost);
             }
         }
         return new BeatTheBookOutput(
@@ -86,8 +86,8 @@ public class BeatTheBook {
                         convertToRealWinnings(totalWinningsWithProfitBoost.numberTwo, beatTheBookInput.numberOfIterations)));
     }
 
-    private float convertToBoostWinning(float perWin) {
-        return (float) ((perWin - 100) * .5);
+    private float convertToBoostWinning(float perWin, float boost) {
+        return (perWin - 100) * boost;
     }
 
     private float convertToRealWinnings(float totalWinnings, int numberOfIterations) {

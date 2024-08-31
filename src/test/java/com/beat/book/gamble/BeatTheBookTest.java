@@ -8,7 +8,7 @@ class BeatTheBookTest {
     @Test
     void playTheGameWithoutBoost() {
         BeatTheBook.Pair input = new BeatTheBook.Pair(-126f, 108f);
-        BeatTheBook.Pair boost = new BeatTheBook.Pair(50, 50);
+        float boost = .5f;
         BeatTheBook.BeatTheBookInput beatTheBookInput = new BeatTheBook.BeatTheBookInput(input, boost, 10000);
         BeatTheBook beatTheBook = new BeatTheBook(beatTheBookInput);
         System.out.println(beatTheBook.playTheGame());
