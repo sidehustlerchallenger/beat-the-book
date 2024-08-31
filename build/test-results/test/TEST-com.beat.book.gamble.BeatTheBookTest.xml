@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.beat.book.gamble.BeatTheBookTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-31T18:31:27" hostname="Ss-MacBook-Pro.local" time="0.012">
+<testsuite name="com.beat.book.gamble.BeatTheBookTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-31T18:32:01" hostname="Ss-MacBook-Pro.local" time="0.013">
   <properties/>
-  <testcase name="playTheGameWithoutBoost()" classname="com.beat.book.gamble.BeatTheBookTest" time="0.012"/>
-  <system-out><![CDATA[BeatTheBookOutput{originalWinnings=Pair{numberOne=96.55574, numberTwo=96.0336}, boostWinnings=Pair{numberOne=117.91575, numberTwo=120.9654}}
+  <testcase name="playTheGameWithoutBoost()" classname="com.beat.book.gamble.BeatTheBookTest" time="0.013"/>
+  <system-out><![CDATA[BeatTheBookOutput{originalWinnings=Pair{numberOne=95.71268, numberTwo=97.0112}, boostWinnings=Pair{numberOne=106.29319, numberTwo=109.604}}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
